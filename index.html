@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+            name="description"
+            content="Web site created using create-react-app"
+            />
+        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+        <title>Movie Star - Cinema HTML Template</title>
+
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+            crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="crossorigin="anonymous"
+            />
+
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+            rel="stylesheet">
+
+
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+            integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="crossorigin="anonymous"
+            />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+            integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="crossorigin="anonymous"
+            />
+
+        <!-- animated CSS -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+            integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+        <link rel="stylesheet" href="./assets/css/styles.css">
+    </head>
+    <body>
+        <header class="position-absolute top-0 w-100">
+            <div class="container">
+                <nav class="nav justify-content-end py-1 top mt-3 nav-top">
+                    <a class="nav-link nav-link-tel border-ligh border-right text-white" href="tel:0330 123 4567"><i class="fas fa-phone-alt mr-2"></i>0330 123 4567</a>
+                    <a class="nav-link nav-link-search text-white" href="/"><i class="fas fa-search"></i></a>
+                </nav>
+
+                <nav class="navbar flex-nowrap justify-content-between nav-responsive">
+                    <a class="" href="/">
+                        <img src='./assets/images/logo.svg' class="w-75" alt="minhhoa" />
+                    </a>
+
+                    <div class="hamburger" onclick="setClose()">
+                        <div class="line line-1"></div>
+                        <div class="line line-2"></div>
+                        <div class="line line-3"></div>
+                    </div>
+
+                    <ul class="list-unstyled border-bottom main-nav d-flex">
+                        <li class="nav-item hover-border-effect d-inline-block">
+                            <a class="nav-link pages px-4 py-4 letter-spacing-3 position-relative text-white active"  href="/">HOME</a>
+                        </li>
+                        <li class="nav-item hover-border-effect d-inline-block">
+                            <a class="nav-link pages px-4 py-4 letter-spacing-3 position-relative text-white" href="/whats-on.html">WHAT'S ON</a>
+                        </li>
+                        <li class="nav-item hover-border-effect d-inline-block">
+                            <a class="nav-link pages px-4 py-4 letter-spacing-3 position-relative text-white" href="/shortcodes.html">SHORTCOEDS</a>
+                        </li>
+                        <li class="nav-item hover-border-effect d-inline-block position-relative news">
+                            <a class="nav-link pages px-4 py-4 letter-spacing-3 position-relative text-white" href="/news.html">NEWS</a>
+                            <div class="sub-nav-news position-absolute text-white l-0 d-flex align-items-center transition-500ms overflow-hidden">
+                                <a href="/news.html" class="m-0 position-absolute transition-1000ms;">NEWS SINGLE</a>
+                            </div>
+                        </li>
+                        <li class="nav-item hover-border-effect d-inline-block">
+                            <a class="nav-link pages px-4 py-4 letter-spacing-3 position-relative text-white" href="/contact.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section id="carousel" class="w-100 h-95vh position-relative mb-5">
+            <!-- {/* Handle pop-up video diasplay */} -->
+            <div class="playTrailer position-fixed transition-1000ms z-index-999">
+                <iframe width="1120" height= "630" class="videoFrame" src="https://www.youtube.com/embed/RhFMIRuHAL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <img src='./assets/images/scroll-arrow.svg' alt="" class="scrollArrow position-absolute b-0" />
+
+            <!-- {/* blur backgound */} -->
+            <div class="blur-bg position-fixed w-100 transition-500ms" onclick="setPlayTrailerCarousel(0)">
+                <i class="fas fa-times text-white position-absolute t-0 r-0 size-34 p-5" onclick="setPlayTrailerCarousel(0)"></i>
+            </div>
+
+
+
+            <div id="carouselMovie" class="carousel slide w-100 h-100" data-ride="carousel">
+                <ol class="container carousel-indicators justify-content-md-start mx-0 mx-auto pl-4">
+                    <li data-target="#carouselMovie" class="rounded-circle border border-white d-inline-block active" data-slide-to='0'></li>
+                    <li data-target="#carouselMovie" class="rounded-circle border border-white d-inline-block mx-4" data-slide-to='1'></li>
+                    <li data-target="#carouselMovie" class="rounded-circle border border-white d-inline-block" data-slide-to='2'></li>
+                </ol>
+                <div class="carousel-inner w-100 h-100">
+                    <div class="carousel-item w-100 h-100 active">
+                        <img src='./assets/images/hero-1.jpg' class="d-block w-100 h-100 object-fit-cover brightness" alt="..." />
+                        <div class="carousel-caption text-left d-none w-100 d-flex align-items-center r-0 l-0">
+                            <div class="container">
+                                <h5 class="ani size-16 text-yellow mb-3 letter-spacing-3">ACTION, ADVENTURE, FANTASY</h5>
+                                <h1 class="ani1 mb-5">End of the World: Part II</h1>
+                                <p class="ani mb-3 size-18">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. <br /> Mirum est notare quam littera gothica, quam nunc putamus parum.</p>
+                                <span class="ani d-inline-block text-center mr-2 rounded-circle border border-white">PG</span>
+                                <button class="ani letter-spacing-3 px-5 py-3 position-relative overflow-hidden border-0 text-white rounded-pill" onclick="setPlayTrailerCarousel(1)"><i class="fas fa-play"></i> Play Trailer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-100 h-100">
+                        <img src='./assets/images/hero-2.jpg' class="d-block w-100 h-100 object-fit-cover brightness" alt="..." />
+                        <div class="carousel-caption text-left d-none w-100 d-flex align-items-center r-0 l-0">
+                            <div class="container">
+                                <h5 class="ani text-yellow mb-3 letter-spacing-3">ACTION, ADVENTURE, FANTASY</h5>
+                                <h1 class="ani1 mb-5">End of the World: Part II</h1>
+                                <p class="ani mb-3 size-18">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. <br /> Mirum est notare quam littera gothica, quam nunc putamus parum.</p>
+                                <span class="ani d-inline-block text-center mr-2 rounded-circle border border-white">15</span>
+                                <button class="ani letter-spacing-3 px-5 py-3 position-relative overflow-hidden border-0 text-white rounded-pill" onclick="setPlayTrailerCarousel(1)"><i class="fas fa-play"></i> Play Trailer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-100 h-100">
+                        <img src='./assets/images/hero-3.jpg' class="d-block w-100 h-100 object-fit-cover brightness" alt="..." />
+                        <div class="carousel-caption text-left d-none w-100 d-flex align-items-center r-0 l-0">
+                            <div class="container">
+                                <h5 class="ani size-16 text-yellow mb-3 letter-spacing-3">ACTION, ADVENTURE, FANTASY</h5>
+                                <h1 class="ani1 mb-5">End of the World: Part II</h1>
+                                <p class="ani mb-3 size-18">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. <br /> Mirum est notare quam littera gothica, quam nunc putamus parum.</p>
+                                <span class="ani d-inline-block text-center mr-2 rounded-circle border border-white">PG</span>
+                                <button class="ani letter-spacing-3 px-5 py-3 position-relative overflow-hidden border-0 text-white rounded-pill" onclick="setPlayTrailerCarousel(1)"><i class="fas fa-play"></i> Play Trailer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="new-in" class="mt-5 py-5">
+            <div class="container">
+                <h3 class="section-title border-bottom py-4 text-orange position-relative mb-5 size-18">NEW IN</h3>
+                <div class="row flex-nowrap film-slider">
+                    <div data-aos="fade-up" data-aos-delay="100" class="col-3">
+                        <div class="card border-0">
+                            <div class="card-img w-100 h-100 position-relative overflow-hidden border-radius-1">
+                                <img src='./assets/images/movie-1.jpg' class="card-img-top w-100 border-radius-1" alt="..." />
+                                <div class="overlay position-absolute h-100 t-0"></div>
+                                <div class="overlay-text text-white  position-absolute w-100 h-100 t-0 l-0 text-center d-flex flex-column justify-content-center align-items-center">
+                                    <i class="fas fa-play play-btn rounded-circle border border-white text-center size-18 mb-4" onclick="setPlayTrailerCarousel(1)"></i>
+                                    <a href="/news.html" class="letter-spacing-3 font-weight-bolder text-decoration-none">READ MORE</a>
+                                    <p>Released: 7 Mar, 2017</p>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title text-center my-3">The last post</h2>
+                                <div class="row justify-content-center">
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="300" class="col-3">
+                        <div class="card border-0">
+                            <div class="card-img w-100 h-100 position-relative overflow-hidden border-radius-1">
+                                <img src='./assets/images/movie-2.jpg' class="card-img-top w-100 border-radius-1" alt="..." />
+                                <div class="overlay position-absolute h-100 t-0"></div>
+                                <div class="overlay-text text-white  position-absolute w-100 h-100 t-0 l-0 text-center d-flex flex-column justify-content-center align-items-center">
+                                    <i class="fas fa-play play-btn rounded-circle border border-white text-center size-18 mb-4" onclick="setPlayTrailerCarousel(1)"></i>
+                                    <a href="/news.html" class="letter-spacing-3 font-weight-bolder text-decoration-none">READ MORE</a>
+                                    <p>Released: 7 Mar, 2017</p>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title text-center my-3">Dark and lonely</h2>
+                                <div class="row justify-content-center">
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fas fa-star-half-alt px-1 text-yellow"></i>
+                                    <i class="far fa-star px-1 text-yellow"></i>
+                                    <i class="far fa-star px-1 text-yellow"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="500" class="col-3">
+                        <div class="card border-0">
+                            <div class="card-img w-100 h-100 position-relative overflow-hidden border-radius-1">
+                                <img src='./assets/images/movie-3.jpg' class="card-img-top w-100 border-radius-1" alt="..." />
+                                <div class="overlay position-absolute h-100 t-0"></div>
+                                <div class="overlay-text text-white  position-absolute w-100 h-100 t-0 l-0 text-center d-flex flex-column justify-content-center align-items-center">
+                                    <i class="fas fa-play play-btn rounded-circle border border-white text-center size-18 mb-4" onclick="setPlayTrailerCarousel(1)"></i>
+                                    <a href="/news.html" class="letter-spacing-3 font-weight-bolder text-decoration-none">READ MORE</a>
+                                    <p>Released: 7 Mar, 2017</p>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title text-center my-3">Venture</h2>
+                                <div class="row justify-content-center">
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fas fa-star-half-alt px-1 text-yellow"></i>
+                                    <i class="far fa-star px-1 text-yellow"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="700" class="col-3">
+                        <div class="card border-0">
+                            <div class="card-img w-100 h-100 position-relative overflow-hidden border-radius-1">
+                                <img src='./assets/images/movie-4.jpg' class="card-img-top w-100 border-radius-1" alt="..." />
+                                <div class="overlay position-absolute h-100 t-0"></div>
+                                <div class="overlay-text text-white  position-absolute w-100 h-100 t-0 l-0 text-center d-flex flex-column justify-content-center align-items-center">
+                                    <i class="fas fa-play play-btn rounded-circle border border-white text-center size-18 mb-4" onclick="setPlayTrailerCarousel(1)"></i>
+                                    <a href="/news.html" class="letter-spacing-3 font-weight-bolder text-decoration-none">READ MORE</a>
+                                    <p>Released: 7 Mar, 2017</p>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title text-center my-3">Hush</h2>
+                                <div class="row justify-content-center">
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="far fa-star px-1 text-yellow"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="800" class="col-3">
+                        <div class="card border-0">
+                            <div class="card-img w-100 h-100 position-relative overflow-hidden border-radius-1">
+                                <img src='./assets/images/movie-3.jpg' class="card-img-top w-100 border-radius-1" alt="..." />
+                                <div class="overlay position-absolute h-100 t-0"></div>
+                                <div class="overlay-text text-white  position-absolute w-100 h-100 t-0 l-0 text-center d-flex flex-column justify-content-center align-items-center">
+                                    <i class="fas fa-play play-btn rounded-circle border border-white text-center size-18 mb-4" onclick="setPlayTrailerCarousel(1)"></i>
+                                    <a href="/news.html" class="letter-spacing-3 font-weight-bolder text-decoration-none">READ MORE</a>
+                                    <p>Released: 7 Mar, 2017</p>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title text-center my-3">Venture</h2>
+                                <div class="row justify-content-center">
+                                <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fa fa-star px-1 text-yellow"></i>
+                                    <i class="fas fa-star-half-alt px-1 text-yellow"></i>
+                                    <i class="far fa-star px-1 text-yellow"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="listShow" class="my-5 py-5">
+            <div class="container">
+                <div>
+                    <ul class="nav nav-pills mb-3 border-bottom mb-5" id="pills-tab" role="tablist">
+                        <li class="nav-item hover-border-effect" role="presentation">
+                            <a class="nav-link text-black px-5 position-relative bg-transparent py-3 size-18 active" id="mon-tab" data-toggle="pill" href="#mon" role="tab" aria-controls="mon" aria-selected="true">MON</a>
+                        </li>
+                        <li class="nav-item hover-border-effect" role="presentation">
+                            <a class="nav-link text-black px-5 position-relative bg-transparent py-3 size-18" id="tue-tab" data-toggle="pill" href="#tue" role="tab" aria-controls="tue" aria-selected="false">TUE</a>
+                        </li>
+                        <li class="nav-item hover-border-effect" role="presentation">
+                            <a class="nav-link text-black px-5 position-relative bg-transparent py-3 size-18" id="wed-tab" data-toggle="pill" href="#wed" role="tab" aria-controls="wed" aria-selected="false">WED</a>
+                        </li>
+                        <li class="nav-item hover-border-effect" role="presentation">
+                            <a class="nav-link text-black px-5 position-relative bg-transparent py-3 size-18" id="thu-tab" data-toggle="pill" href="#thu" role="tab" aria-controls="thu" aria-selected="false">THU</a>
+                        </li>
+                        <li class="nav-item hover-border-effect" role="presentation">
+                            <a class="nav-link text-black px-5 position-relative bg-transparent py-3 size-18" id="fri-tab" data-toggle="pill" href="#fri" role="tab" aria-controls="fri" aria-selected="false">FRI</a>
+                        </li>
+                        <li class="nav-item hover-border-effect" role="presentation">
+                            <a class="nav-link text-black px-5 position-relative bg-transparent py-3 size-18" id="sat-tab" data-toggle="pill" href="#sat" role="tab" aria-controls="sat" aria-selected="false">SAT</a>
+                        </li>
+                        <li class="nav-item hover-border-effect" role="presentation">
+                            <a class="nav-link text-black px-5 position-relative bg-transparent py-3 size-18" id="sun-tab" data-toggle="pill" href="#sun" role="tab" aria-controls="sun" aria-selected="false">SUN</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="mon" role="tabpanel" aria-labelledby="mon-tab">
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-5.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 bg-secondary text-white mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 bg-secondary text-white mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-6.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4  bg-dark text-white mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-7.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 bg-secondary text-white mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 bg-secondary text-white mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 bg-secondary text-white mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 responsive">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-8.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tue" role="tabpanel" aria-labelledby="tue-tab">
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-6.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-7.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-5.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 responsive">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-8.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="wed" role="tabpanel" aria-labelledby="wed-tab">
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-8.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-6.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-7.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 responsive">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-5.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="thu" role="tabpanel" aria-labelledby="thu-tab">
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-7.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-5.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-8.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 responsive">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-6.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="fri" role="tabpanel" aria-labelledby="fri-tab">
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-6.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-7.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-8.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 responsive">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-5.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="sat" role="tabpanel" aria-labelledby="sat-tab">
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-7.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-8.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-5.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 responsive">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-6.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="sun" role="tabpanel" aria-labelledby="sun-tab">
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-6.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-8.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 border-bottom">
+                                <div class="col-2">
+                                    <a href="/news.html"><img src='./assets/images/movie-5.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-5 responsive">
+                                <div class="col-2">
+                                <a href="/news.html"><img src='./assets/images/movie-7.jpg' class="w-100 border-radius-1" alt=""/></a>
+                                </div>
+                                <div class="col-10 text-black">
+                                    <h4 class="text-orange size-16 letter-spacing-3">ACTION, ADVENTURE, SCI-FI</h4>
+                                    <h2 class="size-24 mb-4">Captain America: The First Avenger</h2>
+                                    <p class="size-16">Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a "Super-Soldier serum". But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.</p>
+                                    <a class="text-orange size-12 mb-5 text-decoration-none link-hover" href="/news.html">FULL SYNOPSIS <i class="fas fa-angle-right ml-3"></i></a>
+                                    <div class="view-time row justify-content-between">
+                                        <div class="time col-9 row align-items-center size-12">
+                                            <p class="mr-4 letter-spacing-1 mb-0"><i class="far fa-clock ml-4 mr-1"></i>VIEWING TIMES</p>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">11:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">16:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">18:00</button>
+                                            <button class="py-3 px-4 mr-3 border-0 rounded-lg">21:00</button>
+                                        </div>
+                                        <div class="duration col-3 text-right">
+                                            <span class="d-inline-block mr-5 size-12">120 MINS</span>
+                                            <span class="d-inline-block size-18 text-white font-weight-bolder rounded-circle text-center">PG</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="comingSoon" class="py-5 position-relative w-100">
+            <img src='./assets/images/slide-7.png' alt="" class="position-absolute w-100 h-100 t-0 l-0 bg"/>
+            <div class="container">
+                <h3 class="section-title border-bottom py-4 text-white position-relative my-5 size-18">COMING SOON</h3>
+                <div class="responsive row justify-content-between align-items-center">
+                    <div class="col-5 mb-5 text-white">
+                        <p class="text-orange letter-spacing-3">DRAMA, THRILLER</p>
+                        <h2 data-aos="zoom-in-down" data-aos-delay="1000" class="size-34 mb-3 letter-spacing-3">Deepwater Horizon</h2>
+                        <div class="star-date d-flex w-100 justify-content-start align-items-center mb-5">
+                            <div class="star mr-4 text-yellow size-12">
+                                <i class="fa fa-star px-1"></i>
+                                <i class="fa fa-star px-1"></i>
+                                <i class="fa fa-star px-1"></i>
+                                <i class="fa fa-star px-1"></i>
+                                <i class="fa fa-star px-1"></i>
+                            </div>
+                            <div class="date d-flex  align-items-center size-12">
+                                <i class="far fa-calendar-alt mr-3"></i>
+                                <p class="mb-0">30 September, 2017</p>
+                            </div>
+                        </div>
+                        <p>A dramatization of the April 2010 disaster, when the offshore drilling rig Deepwater Horizon exploded and created the worst oil spill in U.S. history.</p>
+                        <a class="text-orange size-12 mb-5 text-decoration-none letter-spacing-3" href="/">MORE INFOR <i class="fas fa-angle-right ml-3"></i></a>
+                    </div>
+                    <div class="col-6 video">
+                        <div class="img w-100 position-relative">
+                            <img src='./assets/images/slide-1-video.png' alt="video" class="w-100 object-fit-cover"/>
+                            <i class="fas fa-play play-btn rounded-circle border text-center text-orange size-24 mb-4 position-absolute" onclick="setPlayTrailerCarousel(1)"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="soonSlider" class="py-5">
+            <div class="container">
+                <div class="row flex-nowrap soonSlider">
+                    <div class="col-2">
+                    <!-- {/* <div class="col-3 col-2"> */} -->
+
+                        <div class="card border-0 bg-transparent">
+                            <div class="w-100 h-100 border-radius-1">
+                                <img src='./assets/images/movie-9.jpg' class="w-100 border-radius-1" alt="..." />
+                            </div>
+                            <div class="card-body text-center text-white">
+                                <h4 class="card-title text-center my-3">Dark and lonely</h4>
+                                <p>15, Apr 2017</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card border-0 bg-transparent">
+                            <div class="w-100 h-100 border-radius-1">
+                                <img src='./assets/images/movie-11.jpg' class="w-100 border-radius-1" alt="..." />
+                            </div>
+                            <div class="card-body text-center text-white">
+                                <h4 class="card-title text-center my-3">Dark and lonely</h4>
+                                <p>15, Apr 2017</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card border-0 bg-transparent">
+                            <div class="w-100 h-100 border-radius-1">
+                                <img src='./assets/images/movie-12.jpg' class="w-100 border-radius-1" alt="..." />
+                            </div>
+                            <div class="card-body text-center text-white">
+                                <h4 class="card-title text-center my-3">Dark and lonely</h4>
+                                <p>15, Apr 2017</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card border-0 bg-transparent">
+                            <div class="w-100 h-100 border-radius-1">
+                                <img src='./assets/images/movie-13.jpg' class="w-100 border-radius-1" alt="..." />
+                            </div>
+                            <div class="card-body text-center text-white">
+                                <h4 class="card-title text-center my-3">Dark and lonely</h4>
+                                <p>15, Apr 2017</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card border-0 bg-transparent">
+                            <div class="w-100 h-100 border-radius-1">
+                                <img src='./assets/images/movie-14.jpg' class="w-100 border-radius-1" alt="..." />
+                            </div>
+                            <div class="card-body text-center text-white">
+                                <h4 class="card-title text-center my-3">Dark and lonely</h4>
+                                <p>15, Apr 2017</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card border-0 bg-transparent">
+                            <div class="w-100 h-100 border-radius-1">
+                                <img src='./assets/images/movie-6.jpg' class="w-100 border-radius-1" alt="..." />
+                            </div>
+                            <div class="card-body text-center text-white">
+                                <h4 class="card-title text-center my-3">Dark and lonely</h4>
+                                <p>15, Apr 2017</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card border-0 bg-transparent">
+                            <div class="w-100 h-100 border-radius-1">
+                                <img src='./assets/images/movie-7.jpg' class="w-100 border-radius-1" alt="..." />
+                            </div>
+                            <div class="card-body text-center text-white">
+                                <h4 class="card-title text-center my-3">Dark and lonely</h4>
+                                <p>15, Apr 2017</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card border-0 bg-transparent">
+                            <div class="w-100 h-100 border-radius-1">
+                                <img src='./assets/images/movie-8.jpg' class="w-100 border-radius-1" alt="..." />
+                            </div>
+                            <div class="card-body text-center text-white">
+                                <h4 class="card-title text-center my-3">Dark and lonely</h4>
+                                <p>15, Apr 2017</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-5 border-top">
+            <div class="container py-5">
+                <div class="row flex-column align-items-center justify-content-center">
+                    <p class="size-24 text-black">Need help? Contact our support team on</p>
+                    <h2 data-aos= "zoom-in-up" data-aos-delay="1000" class="size-34 text-orange font-weight-bold">0330 123 4567</h2>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="py-5">
+            <div class="container text-white">
+                <div class="row border-bottom pb-5 mb-5">
+                    <div class="col-3 responsive">
+                        <h4 class="text-orange mb-5 letter-spacing-3 pt-5">GET IN TOUCH</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a href="/" class="text-decoration-none">FAQs</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Give us feedback</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Contact us</a> </li> 
+                        </ul>
+                    </div>
+                    <div class="col-3 responsive">
+                        <h4 class="text-orange mb-5 letter-spacing-3 pt-5">ABOUT MOVIE STAR</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a href="/" class="text-decoration-none">About us</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Find us</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Scheduel</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">News</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3 responsive">
+                        <h4 class="text-orange mb-5 letter-spacing-3 pt-5">LEGAL STUFF</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Terms & Conditions</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Privacy polic</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Cookie policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3 responsive">
+                        <h4 class="text-orange mb-5 letter-spacing-3 pt-5">CONNECT WITH US</h4>
+                        <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <a href="/" class="text-decoration-none">
+                                        <i class="fab fa-facebook-f"></i>
+                                        Facebook
+                                    </a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="/" class="text-decoration-none">
+                                        <i class="fab fa-twitter"></i>
+                                        Twitter
+                                    </a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="/" class="text-decoration-none">
+                                        <i class="fab fa-google-plus-g"></i>
+                                        Google +
+                                    </a>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="">2017 © Movie Star/ Web design by <a href="https://www.klevermedia.co.uk/" class="copy-right text-decoration-none" target="_blank" rel="noreferrer">Klever media</a></p>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+            integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="crossorigin="anonymous"></script>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({duration:1000});
+        </script>
+        
+
+    <script src="./main.js"></script>
+
+    </body>
+</html>

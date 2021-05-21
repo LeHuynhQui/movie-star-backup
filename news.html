@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+            name="description"
+            content="Web site created using create-react-app"
+            />
+        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+        <title>Movie Star - Cinema HTML Template</title>
+
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+            crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="crossorigin="anonymous"
+            />
+
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+            rel="stylesheet">
+
+
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+            integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="crossorigin="anonymous"
+            />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+            integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="crossorigin="anonymous"
+            />
+
+        <!-- animated CSS -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+            integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+        <link rel="stylesheet" href="./assets/css/styles.css">
+    </head>
+    <body>
+        
+        <header class="position-absolute top-0 w-100">
+            <div class="container">
+                <nav class="nav justify-content-end py-1 top mt-3 nav-top">
+                    <a class="nav-link nav-link-tel border-ligh border-right text-white" href="tel:0330 123 4567"><i class="fas fa-phone-alt mr-2"></i>0330 123 4567</a>
+                    <a class="nav-link nav-link-search text-white" href="/"><i class="fas fa-search"></i></a>
+                </nav>
+
+                <nav class="navbar flex-nowrap justify-content-between nav-responsive">
+                    <a class="" href="/">
+                        <img src='./assets/images/logo.svg' class="w-75" alt="minhhoa" />
+                    </a>
+
+                    <div class="hamburger" onclick="setClose()">
+                        <div class="line line-1"></div>
+                        <div class="line line-2"></div>
+                        <div class="line line-3"></div>
+                    </div>
+
+                    <ul class="list-unstyled border-bottom main-nav d-flex">
+                        <li class="nav-item hover-border-effect d-inline-block">
+                            <a class="nav-link pages px-4 py-4 letter-spacing-3 position-relative text-white"  href="/">HOME</a>
+                        </li>
+                        <li class="nav-item hover-border-effect d-inline-block">
+                            <a class="nav-link pages px-4 py-4 letter-spacing-3 position-relative text-white" href="/whats-on.html">WHAT'S ON</a>
+                        </li>
+                        <li class="nav-item hover-border-effect d-inline-block">
+                            <a class="nav-link pages px-4 py-4 letter-spacing-3 position-relative text-white" href="/shortcodes.html">SHORTCOEDS</a>
+                        </li>
+                        <li class="nav-item hover-border-effect d-inline-block position-relative news">
+                            <a class="nav-link pages px-4 py-4 letter-spacing-3 position-relative text-white active" href="/news.html">NEWS</a>
+                            <div class="sub-nav-news position-absolute text-white l-0 d-flex align-items-center transition-500ms overflow-hidden">
+                                <a href="/news.html" class="m-0 position-absolute transition-1000ms;">NEWS SINGLE</a>
+                            </div>
+                        </li>
+                        <li class="nav-item hover-border-effect d-inline-block">
+                            <a class="nav-link pages px-4 py-4 letter-spacing-3 position-relative text-white" href="/contact.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+
+        <section id="heroNews" class="position-relative">
+            <img src='./assets/images/scroll-arrow.svg' alt="" class="scrollArrow position-absolute b-0" />
+            <div id="carouselMovie" class="carousel slide w-100 h-100 h-45rem" data-ride="carousel">
+                <div class="carousel-inner w-100 h-100">
+                    <div id="carouselHero" class="carousel-item w-100 h-100 active">
+                        <img src='./assets/images/hero-news.jpeg' class="d-block w-100 h-100 object-fit-cover" alt="..." />
+                        <div class="carousel-caption text-left d-none w-100 d-flex align-items-center r-0 l-0">
+                            <div class="container center-y">
+                                <h5 class="ani size-16 text-yellow mb-3 letter-spacing-3">THE VERY LATEST</h5>
+                                <h1 class="ani1 mb-5 size-46 letter-spacing-3">Cinema news</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="mainNews" class="my-5 py-5">
+           
+            <!-- {/* Handle pop-up video diasplay */} -->
+            <div class="playTrailer position-fixed transition-1000ms z-index-999">
+                <iframe width="1120" height= "630" class="videoFrame" src="https://www.youtube.com/embed/d96cjJhvlMA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <!-- {/* blur backgound */} -->
+            <div class="blur-bg position-fixed w-100 transition-500ms" onclick="setPlayTrailerNews(0)">
+                <i class="fas fa-times text-white position-absolute t-0 r-0 size-34 p-5" onclick="setPlayTrailerNews(0)"></i>
+            </div>
+
+
+
+            <div class="container">
+                <div class="row col-12 justify-content-between align-items-start">
+                    <div class="col-7">
+                        <div class="w-100 border-bottom mb-5 pt-5">
+                            <div class="card-img w-100 h-100 position-relative overflow-hidden border-radius-1 mb-3">
+                                <img src='./assets/images/post-1.png' class="card-img-top w-100 border-radius-1" alt="..." />
+                                <div class="overlay position-absolute h-100 t-0"></div>
+                                <div class="overlay-text text-white  position-absolute w-100 h-100 t-0 l-0 text-center d-flex flex-column justify-content-center align-items-center">
+                                    <i class="fas fa-link play-btn rounded-circle border border-white text-center size-18 mb-4" onclick="setPlayTrailerNews(1)"></i>
+                                    <p>Released: 7 Mar, 2017</p>
+                                </div>
+                            </div>
+                            <div class="card-body px-0 pb-5">
+                                <p class="letter-spacing-3 text-orange m-0 mb-1">NEW RELEASES, WHAT'S HOT</p>
+                                <h3 class="letter-spacing-3 size-24 mb-5">15 Tips To Increase Your Adwords Profits</h3>
+                                <p class="font-weight-lighter mb-3">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                <a href="/news.html"><button class="letter-spacing-3 px-5 py-3 position-relative overflow-hidden text-orange bg-white rounded-pill">READ FULL POST</button></a>
+                            </div>
+                        </div>
+
+                        <div class="w-100 border-bottom mb-5 pt-5">
+                            <div class="card-img w-100 h-100 position-relative overflow-hidden border-radius-1 mb-3">
+                                <img src='./assets/images/hero-2.jpg' class="card-img-top w-100 border-radius-1" alt="..." />
+                                <div class="overlay position-absolute h-100 t-0"></div>
+                                <div class="overlay-text text-white  position-absolute w-100 h-100 t-0 l-0 text-center d-flex flex-column justify-content-center align-items-center">
+                                    <i class="fas fa-link play-btn rounded-circle border border-white text-center size-18 mb-4" onclick="setPlayTrailerNews(1)"></i>
+                                    <p>Released: 7 Mar, 2017</p>
+                                </div>
+                            </div>
+                            <div class="card-body px-0 pb-5">
+                                <p class="letter-spacing-3 text-orange m-0 mb-1">NEW MOVIES, ANIMATION</p>
+                                <h3 class="letter-spacing-3 size-24 mb-5">There Is No Competition</h3>
+                                <p class="font-weight-lighter mb-3">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                <a href="/news.html"><button class="letter-spacing-3 px-5 py-3 position-relative overflow-hidden text-orange bg-white rounded-pill">READ FULL POST</button></a>
+                            </div>
+                        </div>
+
+                        <div class="w-100 border-bottom mb-5 pt-5">
+                            <div class="card-img w-100 h-100 position-relative overflow-hidden border-radius-1 mb-3">
+                                <img src='./assets/images/hero-1.jpg' class="card-img-top w-100 border-radius-1" alt="..." />
+                                <div class="overlay position-absolute h-100 t-0"></div>
+                                <div class="overlay-text text-white  position-absolute w-100 h-100 t-0 l-0 text-center d-flex flex-column justify-content-center align-items-center">
+                                    <i class="fas fa-link play-btn rounded-circle border border-white text-center size-18 mb-4" onclick="setPlayTrailerNews(1)"></i>
+                                    <p>Released: 7 Mar, 2017</p>
+                                </div>
+                            </div>
+                            <div class="card-body px-0 pb-5">
+                                <p class="letter-spacing-3 text-orange m-0 mb-1">NEW MOVIES, ANIMATION</p>
+                                <h3 class="letter-spacing-3 size-24 mb-5">There Is No Competition</h3>
+                                <p class="font-weight-lighter mb-3">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                <a href="/news.html"><button class="letter-spacing-3 px-5 py-3 position-relative overflow-hidden text-orange bg-white rounded-pill">READ FULL POST</button></a>
+                            </div>
+                        </div>
+
+                        <div class="w-100 border-bottom mb-5 pt-5">
+                            <div class="card-img w-100 h-100 position-relative overflow-hidden border-radius-1 mb-3">
+                                <img src='./assets/images/hero-3.jpg' class="card-img-top w-100 border-radius-1" alt="..." />
+                                <div class="overlay position-absolute h-100 t-0"></div>
+                                <div class="overlay-text text-white  position-absolute w-100 h-100 t-0 l-0 text-center d-flex flex-column justify-content-center align-items-center">
+                                    <i class="fas fa-link play-btn rounded-circle border border-white text-center size-18 mb-4" onclick="setPlayTrailerNews(1)"></i>
+                                    <p>Released: 7 Mar, 2017</p>
+                                </div>
+                            </div>
+                            <div class="card-body px-0 pb-5">
+                                <p class="letter-spacing-3 text-orange m-0 mb-1">NEW MOVIES, ANIMATION</p>
+                                <h3 class="letter-spacing-3 size-24 mb-5">There Is No Competition</h3>
+                                <p class="font-weight-lighter mb-3">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                <a href="/news.html"><button class="letter-spacing-3 px-5 py-3 position-relative overflow-hidden text-orange bg-white rounded-pill">READ FULL POST</button></a>
+                            </div>
+                        </div>
+
+                        <div class="w-100 mb-5 pt-5">
+                            <div class="card-img w-100 h-100 position-relative overflow-hidden border-radius-1 mb-3">
+                                <img src='./assets/images/post-5.png' class="card-img-top w-100 border-radius-1" alt="..." />
+                                <div class="overlay position-absolute h-100 t-0"></div>
+                                <div class="overlay-text text-white  position-absolute w-100 h-100 t-0 l-0 text-center d-flex flex-column justify-content-center align-items-center">
+                                    <i class="fas fa-link play-btn rounded-circle border border-white text-center size-18 mb-4" onclick="setPlayTrailerNews(1)"></i>
+                                    <p>Released: 7 Mar, 2017</p>
+                                </div>
+                            </div>
+                            <div class="card-body px-0 pb-5">
+                                <p class="letter-spacing-3 text-orange m-0 mb-1">NEW MOVIES, ANIMATION</p>
+                                <h3 class="letter-spacing-3 size-24 mb-5">There Is No Competition</h3>
+                                <p class="font-weight-lighter mb-3">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                                <a href="/news.html"><button class="letter-spacing-3 px-5 py-3 position-relative overflow-hidden text-orange bg-white rounded-pill">READ FULL POST</button></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class=" w-100 seach-input position-relative pt-5 border-radius-3 border-bottom-radius-none mb-5">
+                            <input type="text" name="" id="seach" class="w-100 border p-3 border-radius-3 outline-none" placeholder="Search..." />
+                            <i class="fas fa-search position-absolute text-orange b-0 r-0 p-4"></i>
+                        </div>
+                        <div class="caterogies mb-5">
+                            <h3 class="section-title border-bottom py-4 text-orange position-relative mb-5 size-18">CATEGORIES</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="/news.html" class="text-black">Coming soon</a></li>
+                                <li class="mb-2"><a href="/news.html" class="text-black">New releases</a></li>
+                                <li class="mb-2"><a href="/news.html" class="text-black">What's hot</a></li>
+                                <li class="mb-2"><a href="/news.html" class="text-black">Events</a></li>
+                            </ul>
+                        </div>
+                        <div class="archives mb-5">
+                            <h3 class="section-title border-bottom py-4 text-orange position-relative mb-5 size-18">ARCHIVES</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="/news.html" class="text-black">July 2017</a></li>
+                                <li class="mb-2"><a href="/news.html" class="text-black">June 2017</a></li>
+                                <li class="mb-2"><a href="/news.html" class="text-black">May 2017</a></li>
+                                <li class="mb-2"><a href="/news.html" class="text-black">April 2017</a></li>
+                            </ul>
+                        </div>
+                        <div class="tags">
+                            <h3 class="section-title border-bottom py-4 text-orange position-relative mb-5 size-18">TAGS</h3>
+                            <a class="py-2 px-4 mr-3 mb-3 rounded d-inline-block" href="/">Thriller</a>
+                            <a class="py-2 px-4 mr-3 mb-3 rounded d-inline-block" href="/">Kids</a>
+                            <a class="py-2 px-4 mr-3 mb-3 rounded d-inline-block" href="/">Offers</a>
+                            <a class="py-2 px-4 mr-3 mb-3 rounded d-inline-block" href="/">Movie nights</a>
+                            <a class="py-2 px-4 mr-3 mb-3 rounded d-inline-block" href="/">Premiere</a>
+                            <a class="py-2 px-4 mr-3 mb-3 rounded d-inline-block" href="/">Animation</a>
+                            <a class="py-2 px-4 mr-3 mb-3 rounded d-inline-block" href="/">Comedy</a>
+                            <a class="py-2 px-4 mr-3 mb-3 rounded d-inline-block" href="/">New</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="col-12 row justify-content-center border-top pt-5">
+                    <ul>
+                        <li class="d-inline-block"><a class=" text-orange size-24 play-btn page-btn rounded-circle mx-3 text-center d-block p-0 page-active" href="/news.html">1</a></li>
+                        <li class="d-inline-block"><a class=" text-orange size-24 play-btn page-btn rounded-circle mx-3 text-center d-block p-0" href="/news.html">2</a></li>
+                        <li class="d-inline-block"><a class=" text-orange size-24 play-btn page-btn rounded-circle mx-3 text-center d-block p-0" href="/news.html">3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+        <footer class="py-5">
+            <div class="container text-white">
+                <div class="row border-bottom pb-5 mb-5">
+                    <div class="col-3 responsive">
+                        <h4 class="text-orange mb-5 letter-spacing-3 pt-5">GET IN TOUCH</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a href="/" class="text-decoration-none">FAQs</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Give us feedback</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Contact us</a> </li> 
+                        </ul>
+                    </div>
+                    <div class="col-3 responsive">
+                        <h4 class="text-orange mb-5 letter-spacing-3 pt-5">ABOUT MOVIE STAR</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a href="/" class="text-decoration-none">About us</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Find us</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Scheduel</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">News</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3 responsive">
+                        <h4 class="text-orange mb-5 letter-spacing-3 pt-5">LEGAL STUFF</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Terms & Conditions</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Privacy polic</a></li>
+                            <li class="mb-3"><a href="/" class="text-decoration-none">Cookie policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3 responsive">
+                        <h4 class="text-orange mb-5 letter-spacing-3 pt-5">CONNECT WITH US</h4>
+                        <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <a href="/" class="text-decoration-none">
+                                        <i class="fab fa-facebook-f"></i>
+                                        Facebook
+                                    </a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="/" class="text-decoration-none">
+                                        <i class="fab fa-twitter"></i>
+                                        Twitter
+                                    </a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="/" class="text-decoration-none">
+                                        <i class="fab fa-google-plus-g"></i>
+                                        Google +
+                                    </a>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="">2017 © Movie Star/ Web design by <a href="https://www.klevermedia.co.uk/" class="copy-right text-decoration-none" target="_blank" rel="noreferrer">Klever media</a></p>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+            integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="crossorigin="anonymous"></script>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({duration:1000});
+        </script>
+        
+
+    <script src="./main.js"></script>
+
+    </body>
+</html>
